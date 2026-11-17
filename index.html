@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#183d2e"><title>Misi Penyelamatan Kompos</title>
+<style>
+:root{--green:#183d2e;--cream:#f4ead3;--ink:#20372d;--gold:#c6a76a}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#e8dfc9;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+body{padding:12px 8px 28px}.shell{width:min(100%,560px);margin:0 auto}.page{position:relative;width:100%;line-height:0;box-shadow:0 8px 28px #30251535;border-radius:3px;overflow:hidden;background:#e9ddc3}.page>img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}.layer{position:absolute;line-height:1.35;font-family:Arial,sans-serif;color:#1b3529}.hidden{display:none!important}
+.field{position:absolute;background:rgba(232,218,190,.28);border:1px solid rgba(124,121,93,.48);border-radius:4px;padding:8px;font:16px Arial,sans-serif;color:#1c3028;resize:vertical;outline:none}.field:focus{background:rgba(244,234,211,.42);border:2px solid #496b50;box-shadow:0 0 0 2px #d2b97855}.field::placeholder{color:#77715f}
+.action{border:1px solid #e6d2a4;background:#183d2e;color:#fff9e9;font-weight:700;font-family:Arial,sans-serif;letter-spacing:.04em;border-radius:7px;padding:11px 15px;box-shadow:0 2px 4px #0003;cursor:pointer;line-height:1.1}.action:disabled{opacity:.55;cursor:not-allowed}.action:active{filter:brightness(.92)}
+.timer{position:absolute;right:5%;top:17.5%;background:#183d2e;color:#fff8e8;border:1px solid #c7ab70;border-radius:20px;padding:6px 10px;font:700 clamp(11px,2.8vw,15px) Arial,sans-serif;letter-spacing:.05em;box-shadow:0 2px 5px #0003;z-index:5}
+.navbtn{position:absolute;left:50%;transform:translateX(-50%);min-width:42%;font-size:clamp(10px,2.8vw,14px);white-space:nowrap}
+.identity-name{left:24%;top:67.2%;width:56%;height:2.7%;font-size:14px;padding:3px}.identity-class{left:24%;top:69.7%;width:56%;height:2.7%;font-size:14px;padding:3px}
+.cover-start{top:94.1%}.brief-start{top:94.2%}
+.answer{left:11%;top:77.3%;width:78%;height:15.1%;font-size:clamp(12px,3.2vw,16px);background:#fff8e966;border:1px dashed #9b875c;line-height:1.35}
+.m1-options{position:absolute;left:10%;top:72.8%;width:80%;display:flex;gap:5px;justify-content:center;flex-wrap:wrap;line-height:1}
+.choice{background:#f5ecd8eF;color:#1c3d2e;border:1px solid #6b755c;border-radius:16px;padding:5px 10px;font:700 clamp(10px,2.8vw,13px) Arial,sans-serif;cursor:pointer;min-width:19%}.choice[aria-pressed="true"]{background:#183d2e;color:#fff7e5;outline:2px solid #c6a76a}
+.submit{position:absolute;right:8%;bottom:2.2%;font-size:clamp(10px,2.8vw,14px)}
+.m3-choices{position:absolute;left:8.5%;top:50.6%;width:83%;height:18.5%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;column-gap:3%;row-gap:4%;line-height:1;z-index:40;pointer-events:auto}
+.m3-choices .choice{position:relative;display:block;width:100%;height:100%;min-width:0;margin:0;padding:0;border:2px solid transparent;border-radius:12px;background:rgba(198,167,106,.025);color:transparent;font-size:0;box-shadow:none;cursor:pointer;pointer-events:auto;touch-action:manipulation;z-index:41}
+.m3-choices .choice[aria-pressed="true"]{background:#c6a76a35;border:3px solid #183d2e;outline:2px solid #f4ead3;box-shadow:inset 0 0 0 2px #c6a76a}
+.m3-choices .choice:focus-visible{outline:3px solid #183d2e;outline-offset:-4px}
+.m3-choices .choice:disabled{cursor:not-allowed;opacity:.7}
+.m3-answer{left:10%;top:82%;width:80%;height:14.5%;resize:none;z-index:45;pointer-events:auto;touch-action:manipulation;font-size:clamp(14px,3.4vw,18px)}.m4-answer{left:10%;top:67.2%;width:80%;height:25.7%;resize:none;font-size:clamp(14px,3.4vw,18px);z-index:35;pointer-events:auto;touch-action:manipulation}
+.status{position:absolute;left:7%;right:7%;bottom:.6%;font:700 clamp(9px,2.5vw,12px) Arial,sans-serif;text-align:center;color:#183d2e;line-height:1.1;text-shadow:0 1px 0 #f4ead3}
+.case-score{position:absolute;left:69.2%;width:7.8%;transform:translateY(-50%);text-align:right;font:700 clamp(13px,3.7vw,20px) Arial,sans-serif;color:#fff8e8;line-height:1;z-index:10}.case-total{position:absolute;left:20%;top:65.2%;width:60%;height:5.5%;display:flex;align-items:center;justify-content:center;font:900 clamp(22px,6.8vw,42px) Arial,sans-serif;color:#183d2e;line-height:1;z-index:10}
+.smallprint{font:12px/1.4 Arial,sans-serif;text-align:center;color:#3e493c;margin:12px auto;max-width:540px}
+@media(max-width:380px){body{padding:4px 2px 18px}.field{padding:5px}.action{padding:8px 10px}.choice{padding:4px 7px}}
+</style></head>
+<body><main class="shell">
+<section class="page" id="stage"></section>
+<p class="smallprint" id="hint">Mini-game pembelajaran • Simpan kemajuan di perangkat ini. Jangan tutup browser selama permainan berlangsung.</p>
+</main>
+<script>
+const PAGES=[['cover(1).png','cover'],['briefing.png','briefing'],['misi1.png','m1'],['misi2.png','m2'],['misi3.png','m3'],['misi4.png','m4'],['case_closed.png','closed']];
+const KEY='misiPenyelamatanKompos_final_20261112';
+let state=loadState(); let timerHandle=null;
+function fresh(){return {step:0,name:'',kelas:'',missions:{},started:{},locked:{},scores:{}}}
+function loadState(){try{return JSON.parse(localStorage.getItem(KEY))||fresh()}catch{return fresh()}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+function el(tag,cls,txt){const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n}
+function add(parent,tag,cls,txt,style){const n=el(tag,cls,txt);if(style)Object.assign(n.style,style);parent.appendChild(n);return n}
+function pct(n){return n+'%'}
+function base(src){const stage=document.getElementById('stage');stage.innerHTML='';const img=add(stage,'img','',null);img.src=src;img.alt='';return stage}
+function button(parent,label,cls,fn,style){const b=add(parent,'button','action '+(cls||''),label,style);b.type='button';b.addEventListener('click',fn);return b}
+function field(parent,placeholder,cls,style,value=''){const t=add(parent,'textarea','field '+(cls||''));t.placeholder=placeholder;t.value=value;t.autocomplete='off';Object.assign(t.style,style||{});return t}
+function go(step){clearInterval(timerHandle);state.step=step;save();render()}
+function render(){clearInterval(timerHandle);const [file,kind]=PAGES[state.step];const stage=base(file);
+ if(kind==='cover')return cover(stage);
+ if(kind==='briefing')return briefing(stage);
+ if(kind==='closed')return closed(stage);
+ return mission(stage,kind);
+}
+function cover(s){const n=add(s,'input','field identity-name');n.placeholder='Ketik nama lengkap';n.value=state.name;n.addEventListener('input',()=>{state.name=n.value;save()});const k=add(s,'input','field identity-class');k.placeholder='Ketik kelas';k.value=state.kelas;k.addEventListener('input',()=>{state.kelas=k.value;save()});button(s,'MULAI MISI','navbtn cover-start',()=>{if(!state.name.trim()||!state.kelas.trim()){alert('Lengkapi nama dan kelas terlebih dahulu.');return}go(1)})}
+function briefing(s){button(s,'MULAI PENYELIDIKAN','navbtn brief-start',()=>go(2))}
+function mission(s,kind){const idx={m1:1,m2:2,m3:3,m4:4}[kind];const saved=state.missions[idx]||{};const timer=add(s,'div','timer','05:00');timer.setAttribute('aria-live','off');
+ let answer,choices=[];
+ if(idx===1){const box=add(s,'div','m1-options');[['A','Sisa makanan meningkat'],['B','Daun berukuran besar'],['C','Lokasi lebih teduh'],['D','Bau tidak sedap']].forEach(([v,label])=>{const b=add(box,'button','choice',v+' · '+label);b.type='button';b.setAttribute('aria-pressed',(saved.choices||[]).includes(v));b.addEventListener('click',()=>{if(state.locked[idx])return;let a=new Set(saved.choices||[]);if(a.has(v))a.delete(v);else if(a.size<2)a.add(v);else{alert('Pilih tepat dua kondisi.');return}saved.choices=[...a];state.missions[idx]=saved;save();b.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',a.has(x.textContent[0])))})});answer=field(s,'Tuliskan alasan ilmiah untuk dua kondisi yang kamu pilih.','answer',null,saved.answer||'');}
+ if(idx===2){answer=field(s,'Tuliskan dua bukti hasil praktikum, jelaskan maknanya, lalu hubungkan dengan dugaan pada Misi 1.','answer',null,saved.answer||'')}
+ if(idx===3){const box=add(s,'div','m3-choices');[['S1','Ubah ukuran bahan'],['S2','Atur kondisi lingkungan'],['S3','Atur jumlah bahan'],['S4','Tambahkan bahan pendukung']].forEach(([v,l])=>{const b=add(box,'button','choice','');b.type='button';b.setAttribute('aria-label',v+' — '+l);b.setAttribute('title',v+' — '+l);b.setAttribute('aria-pressed',saved.strategy===v);b.addEventListener('click',()=>{if(state.locked[idx])return;saved.strategy=v;state.missions[idx]=saved;save();box.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.getAttribute('aria-label').startsWith(v)))})});answer=field(s,'Tuliskan alasan pemilihan strategi, konsep ilmiah, dan perubahan yang kamu harapkan.','m3-answer',{zIndex:'30',pointerEvents:'auto',touchAction:'manipulation'},saved.answer||'')}
+ if(idx===4){answer=field(s,'Tuliskan kesimpulan berdasarkan bukti, rekomendasi untuk sekolah, dan alasan yang menghubungkan keduanya.','field m4-answer',null,saved.answer||'')}
+ answer.addEventListener('input',()=>{saved.answer=answer.value;state.missions[idx]=saved;save()});
+ if(state.locked[idx]){answer.disabled=true;s.querySelectorAll('.choice').forEach(b=>b.disabled=true);timer.textContent='TERKUNCI';button(s,'LANJUTKAN','submit',()=>go(idx===4?6:idx+2),{bottom:'2.2%',right:'8%'})}
+ else{const start=state.started[idx]|| (Date.now()+300000);state.started[idx]=start;save();tick();timerHandle=setInterval(tick,250);function tick(){const left=Math.max(0,Math.ceil((start-Date.now())/1000));timer.textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');if(left<=0){clearInterval(timerHandle);finish(idx,true)}}
+ button(s,'KUNCI JAWABAN','submit',()=>finish(idx,false),{bottom:'2.2%',right:'8%'})}
+}
+function finish(idx,timeout){if(state.locked[idx])return;const m=state.missions[idx]||{};let score=0;if(idx===1)score=scoreM1(m);if(idx===2)score=scoreM2(m);if(idx===3)score=scoreM3(m);if(idx===4)score=scoreM4(m);state.scores[idx]=Math.max(0,Math.min(25,score));state.locked[idx]=true;state.missions[idx]=m;save();clearInterval(timerHandle);const next=idx===4?6:idx+2;render();const s=document.getElementById('stage');const msg=add(s,'div','status',timeout?'Waktu habis. Jawaban dikunci.':'Jawaban dikunci, silahkan ke misi selanjutnya');const b=s.querySelector('.submit');if(b){b.textContent=idx===4?'LIHAT HASIL AKHIR':'LANJUTKAN';b.onclick=()=>go(next)}else button(s,idx===4?'LIHAT HASIL AKHIR':'LANJUTKAN','submit',()=>go(next),{bottom:'2.2%',right:'8%'})}
+const norm=t=>(t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
+function has(t,arr){return arr.some(x=>t.includes(x))}function count(t,arr){return arr.filter(x=>t.includes(x)).length}
+function scoreM1(m){const t=norm(m.answer),c=m.choices||[];if(c.length!==2||!t)return 0;let s=0;const surface=has(t,['luas permukaan','permukaan lebih besar','partikel lebih kecil','potongan lebih kecil','ukuran bahan lebih kecil','bahan dicacah','bahan lebih halus']);const temp=has(t,['suhu','temperatur','lebih dingin','lebih panas','panas','dingin']);const slow=has(t,['lebih lambat','melambat','lebih lama','lambat']);const relation=has(t,['karena','sehingga','akibat','membuat','menyebabkan','memengaruhi','berpengaruh']);const b=c.includes('B'),cc=c.includes('C'),a=c.includes('A'),d=c.includes('D');if(b&&cc){if(surface&&temp&&slow&&relation)s=25;else if((surface||temp)&&slow)s=20;else if(surface||temp)s=12;else if(has(t,['bau']))s=7;else s=10;}else if((a&&b)||(a&&cc)){s=(surface||temp)?15:has(t,['karena','sehingga'])?13:8;if(d)s=6;}else if(d){s=6}else{s=0}if(has(t,['lebih cepat','mempercepat'])&&!slow)s=Math.min(s,10);if(has(t,['bau adalah penyebab','bau menyebabkan']))s=Math.min(s,7);return s}
+function scoreM2(m){const t=norm(m.answer);if(!t)return 0;const surface=has(t,['luas permukaan','partikel lebih kecil','bahan lebih kecil','potongan lebih kecil']);const temp=has(t,['suhu','temperatur']);const fast=has(t,['lebih cepat','mempercepat','waktu lebih singkat']);const slow=has(t,['lebih lambat','memperlambat','waktu lebih lama']);const link=has(t,['misi 1','daun','komposter','lebih teduh','kasus']);const explain=has(t,['karena','sehingga','akibat','membuat']);const wrong=(surface&&has(t,['lebih lambat']))||(temp&&has(t,['suhu lebih tinggi lebih lambat','suhu tinggi lebih lambat']));if(has(t,['saya tidak tahu']))return 0;if(surface&&temp&&fast&&!wrong)return link&&explain?25:link?22:explain?20:18;if(surface&&fast)return temp?17:15;if(temp&&fast)return 15;if(surface&&temp)return 12;if(has(t,['bau','penguraian lambat']))return explain?6:4;if(has(t,['konsentrasi'])&&temp)return 10;if(has(t,['hasil praktikum']))return 8;return 2}
+function scoreM3(m){const t=norm(m.answer),st=m.strategy;if(!t||!st)return 0;let reason=has(t,['karena','sehingga','agar','supaya','dengan cara']),concept=0,pred=has(t,['lebih cepat','mempercepat','lebih lambat','mengurangi','meningkatkan','menjadi']),caseLink=has(t,['komposter','daun','sisa makanan','bau','kasus']);if(st==='S1')concept=has(t,['luas permukaan','permukaan lebih besar','partikel lebih kecil','bahan dicacah'])?7:has(t,['ukuran','potongan'])?4:1;if(st==='S2')concept=has(t,['suhu','temperatur','kelembapan','kelembaban','oksigen','udara','kondisi lingkungan'])?7:3;if(st==='S3')concept=has(t,['kapasitas','jumlah bahan','perbandingan','seimbang','tidak berlebihan'])?7:3;if(st==='S4')concept=has(t,['bahan pendukung','daun kering','bahan coklat','karbon','udara','kelembapan'])?6:2;let selection=3,why=reason?5:2,change=pred?5:1,connection=caseLink&&reason?3:caseLink?2:1;let total=selection+why+concept+change+connection;if(st==='S3'||st==='S4')total=Math.min(total,20);return Math.min(25,total)}
+function scoreM4(m){const t=norm(m.answer);if(!t)return 0;const conclusion=has(t,['kesimpulan','penguraian','laju','lebih lambat','melambat','proses']);const evidence=has(t,['praktikum','hasil','data','bukti','suhu','luas permukaan']);const recommendation=has(t,['sebaiknya','perlu','disarankan','cacah','memotong','mengatur','menjaga','menambah','mengurangi','memeriksa']);const logic=has(t,['karena','sehingga','oleh karena itu','berdasarkan']);let K=conclusion?(has(t,['daun','sisa makanan','komposter','teduh'])?8:6):2;let B=evidence?(has(t,['menunjukkan','hasil','lebih cepat','lebih lambat','waktu'])?7:5):0;let R=recommendation?(has(t,['cacah','atur','periksa','jaga','sesuaikan','ukur'])?7:5):0;let P=logic?(conclusion&&evidence&&recommendation?3:2):1;return Math.min(25,K+B+R+P)}
+function closed(s){
+ const rows=[['M1 — DETEKTIF MASALAH',1,37.7],['M2 — PEMBURU BUKTI',2,43.1],['M3 — PERANCANG STRATEGI',3,48.7],['M4 — PENYIMPUL AKHIR',4,54.6]];
+ rows.forEach(([label,i,y])=>{const v=add(s,'div','case-score',String(state.scores[i]??0));v.style.top=y+'%';v.setAttribute('aria-label',label+' '+(state.scores[i]??0)+' dari 25');});
+ const total=[1,2,3,4].reduce((a,i)=>a+(state.scores[i]||0),0);
+ const totalNode=add(s,'div','case-total',String(total));totalNode.setAttribute('aria-label','Skor akhir '+total+' dari 100');
+}
+
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+render();
+</script></body></html>

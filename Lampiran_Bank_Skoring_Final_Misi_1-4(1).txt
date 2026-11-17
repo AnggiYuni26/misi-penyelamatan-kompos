@@ -1,0 +1,179 @@
+LAMPIRAN BANK ACUAN SKORING FINAL MISI 1–4
+Tambahkan lampiran ini ke bagian akhir prompt induk Canva Code.
+
+ATURAN GLOBAL
+- Setiap misi memakai mesin penilaian terpisah.
+- Bank adalah jangkar semantik, bukan exact-match.
+- Terima sinonim/parafrasa dan jawaban di luar bank jika penalarannya memenuhi rubrik.
+- Jangan memberi skor hanya karena kata kunci muncul, jangan menghukum kesalahan yang sama dua kali, dan jangan mengarang data praktikum.
+- Pilih satu skor akhir untuk setiap misi; jangan menjumlahkan skor dari beberapa pola.
+- Jangan menampilkan skor sampai CASE CLOSED.
+- Jika hanya tersedia heuristik lokal, jangan mengklaim pemahaman bahasa alami sempurna.
+
+==================================================
+MISI 1 — DETEKTIF MASALAH (29 POLA)
+==================================================
+Kondisi: A = sisa makanan meningkat; B = daun kering besar/tidak dicacah; C = komposter dipindahkan ke lokasi lebih teduh; bau = bau tidak sedap. B+C umumnya paling kuat tetapi tidak otomatis mendapat 25. Bau adalah gejala/petunjuk, bukan penyebab langsung yang sudah terbukti. Jangan menganggap lokasi teduh otomatis lebih dingin. Jangan menghidupkan kembali pola AB lama tentang miskonsepsi luas permukaan.
+
+B+C:
+BC-01 penjelasan ilmiah lengkap — 25
+BC-02 penjelasan sederhana tetapi benar — 25
+BC-03 satu kondisi dijelaskan secara penuh — 20
+BC-04 alasan umum — 13
+BC-05 tidak memberikan penjelasan — 10
+BC-06 bau dijadikan penjelasan utama — 7
+BC-07 miskonsepsi luas permukaan, tetapi alasan suhu benar — 12
+BC-08 konsep luas permukaan benar, tetapi alasan suhu salah — 12
+BC-09 konsep disebutkan tanpa hubungan dengan laju penguraian — 10
+BC-10 kedua penjelasan salah — 5
+BC-11 menyatakan penguraian lebih cepat dengan alasan tidak relevan — 5
+BC-12 alasan tidak berkaitan dengan laju penguraian — 5
+
+A+B:
+AB-01 alasan masuk akal untuk kedua kondisi — 20
+AB-02 alasan B benar, A hanya berupa pernyataan — 15
+AB-03 alasan umum untuk keduanya — 13
+AB-04 hanya mengulang informasi kasus — 8
+AB-05 menghubungkan kondisi dengan laju tetapi mekanisme kurang memadai — 10
+AB-06 alasan tidak ilmiah — 7
+AB-07 menyatakan penguraian lebih cepat tanpa dasar memadai — 5
+AB-08 berfokus pada bau — 7
+
+A+C:
+AC-01 alasan masuk akal untuk kedua kondisi — 20
+AC-02 hanya C dijelaskan dengan benar — 15
+AC-03 alasan umum — 12
+AC-04 tidak ada alasan jelas — 5
+AC-05 menganggap perpindahan lokasi penyebab langsung tanpa mekanisme — 4
+AC-06 menyatakan lokasi teduh tidak memiliki pengaruh sama sekali — 10
+
+Pilihan menggunakan bau:
+OD-01 bau+B — 6
+OD-02 bau+C — 6
+OD-03 bau+A — 6
+
+Skor resmi M1 hanya: 25, 20, 18, 15, 13, 12, 10, 8, 7, 6, 5, 4, 3, 0. Skor 18 dan 3 diizinkan tanpa pola contoh khusus. Nilai berdasarkan kondisi yang dipilih, konsep yang benar-benar dijelaskan, sebab-akibat, arah perubahan laju penguraian, relevansi alasan, dan miskonsepsi. Jangan memberi 25 hanya karena memilih B+C. Simpan Skor_M1.
+
+==================================================
+MISI 2 — PEMBURU BUKTI (25 POLA)
+==================================================
+1. Dua bukti benar, penjelasan dan hubungan kasus lengkap — 25
+2. Jawaban sederhana tetapi benar — 22
+3. Membandingkan hasil tanpa penerapan spesifik ke M1 — 20
+4. Data kelas yang benar-benar tersedia dihubungkan ke kasus — 25
+5. Dua bukti benar, hubungan ke kasus belum lengkap — 20
+6. Dua bukti benar, hubungan ke kasus masih umum — 20
+7. Arah kedua bukti benar tanpa hubungan ke M1 — 18
+8. Luas permukaan baik, suhu tidak dijelaskan — 17
+9. Suhu benar, luas permukaan tidak dijelaskan — 15
+10. Luas permukaan benar dan penalaran hati-hati tentang jumlah sisa makanan — 20
+11. Luas permukaan benar, alasan jumlah sisa makanan hati-hati tetapi terbatas — 17
+12. Suhu benar dan penalaran hati-hati tentang jumlah sisa makanan — 20
+13. Hubungan teduh/suhu benar, penjelasan jumlah bahan umum — 17
+14. Variabel relevan, arah hubungan salah — 14
+15. Luas permukaan cukup tepat, tetapi arah kedua bukti salah — 14
+16. Variabel relevan, arah hubungan salah — 10
+17. Menyebut dua hasil praktikum tanpa hasil spesifik — 12
+18. Menyatakan hasil berbeda tanpa arah perubahan — 10
+19. Hanya menyatakan kondisi berbeda secara umum — 8
+20. Konsentrasi dan suhu; relevansi konsentrasi bergantung pada variabel yang benar-benar diuji — 10
+21. Konsentrasi dan luas permukaan — 8
+22. Bau dan penguraian lambat dianggap bukti penyebab langsung — 6
+23. Bau dan penguraian lambat hanya disebut sebagai gejala — 4
+24. Mengenali hasil praktikum secara samar tanpa hubungan jelas — 2
+25. “Saya tidak tahu” — 0
+
+Skor resmi M2 hanya: 25, 22, 20, 18, 17, 15, 14, 12, 10, 8, 6, 4, 2, 0. Nilai ketepatan bukti, arah hubungan, keterkaitan dengan dugaan M1, kualitas penalaran, dan miskonsepsi secara terpadu. Jangan menghukum kesalahan sama dua kali. Jangan mengarang hasil praktikum. Simpan Skor_M2.
+
+==================================================
+MISI 3 — PERANCANG STRATEGI (32 POLA)
+==================================================
+Rubrik: pemilihan strategi 0–3; alasan/kesesuaian kondisi 0–6; konsep ilmiah/logika 0–7; perubahan yang diharapkan 0–6; keterhubungan/penalaran 0–3. Maksimum 25. Kategori: 22–25 sangat kuat; 18–21 baik; 13–17 cukup; 7–12 lemah; 1–6 sangat lemah; 0 kosong/tidak relevan.
+
+Kelompok pola dan skor acuan:
+01 S1, penalaran ilmiah lengkap — 25
+02 S1, alasan dan prediksi benar tetapi lebih ringkas — 21
+03 S1, strategi relevan tetapi hubungan ilmiah/prediksi belum lengkap — 16
+04 S1, alasan umum dan hubungan sebab-akibat terbatas — 9
+05 S2, kondisi lingkungan aktual dan penalaran lengkap — 25
+06 S2, alasan dan prediksi benar tetapi lebih ringkas — 21
+07 S2, strategi relevan tetapi kondisi/mekanisme belum lengkap — 16
+08 S2, alasan umum dan hubungan sebab-akibat terbatas — 9
+09 S3, jumlah bahan dihubungkan hati-hati dengan kapasitas/kondisi — 20
+10 S3, alasan relevan tetapi hubungan ilmiah/prediksi terbatas — 15
+11 S3, jumlah perlu diatur dengan alasan minim — 8
+12 S3, klaim sederhana tanpa dasar memadai — 3
+13 S4, fungsi bahan pendukung dan prediksi dijelaskan konsisten — 20
+14 S4, fungsi bahan pendukung kurang dijelaskan — 15
+15 S4, bahan tambahan disebut membantu tanpa alasan memadai — 8
+16 S4, klaim penambahan bahan pasti mempercepat tanpa alasan — 3
+17 revisi dugaan peningkatan sisa makanan menuju S1, lengkap — 25
+18 revisi dugaan peningkatan sisa makanan menuju S2, lengkap — 25
+19 revisi dugaan tersebut menuju S1, alasan/prediksi cukup tetapi belum lengkap — 21
+20 revisi dugaan tersebut menuju S2, alasan/prediksi cukup tetapi belum lengkap — 21
+21 revisi dugaan tersebut menuju S1, hubungan bukti sebagian — 16
+22 revisi dugaan tersebut menuju S2, hubungan bukti sebagian — 16
+23 revisi dugaan tersebut menuju S1, alasan minim — 9
+24 revisi dugaan tersebut menuju S2, alasan minim — 9
+25 revisi dugaan bau sebagai petunjuk menuju S1, lengkap — 25
+26 revisi dugaan bau sebagai petunjuk menuju S2, lengkap — 25
+27 revisi dugaan bau menuju S1, alasan/prediksi benar tetapi belum lengkap — 21
+28 revisi dugaan bau menuju S2, alasan/prediksi benar tetapi belum lengkap — 21
+29 revisi dugaan bau menuju S1, hubungan bukti sebagian — 16
+30 revisi dugaan bau menuju S2, hubungan bukti sebagian — 16
+31 revisi dugaan bau menuju S1, alasan minim — 9
+32 revisi dugaan bau menuju S2, alasan minim — 9
+
+CATATAN KEJUJURAN M3: daftar di atas adalah deskripsi pola semantik dan jangkar skor ringkas, bukan kutipan verbatim 32 jawaban asli. Jika teks bank final verbatim tersedia dari pembuat materi, gunakan teks itu tanpa mengubahnya. Jangan mengklaim deskripsi ringkas ini sebagai redaksi asli.
+Aturan ilmiah: S1 berkaitan dengan ukuran bahan/luas permukaan relatif; S2 mempertimbangkan kondisi lingkungan aktual (lebih panas/cerah tidak selalu lebih baik); S3 mempertimbangkan kapasitas dan jumlah bahan; S4 mempertimbangkan fungsi bahan pendukung dan kondisi campuran. Bau adalah indikator, bukan kepastian akar masalah. Perubahan yang diharapkan adalah prediksi, bukan jaminan. Jawaban di luar bank dapat memperoleh 25 jika memenuhi rubrik. Simpan Skor_M3.
+
+==================================================
+MISI 4 — PENYIMPUL AKHIR (32 POLA)
+==================================================
+Rubrik: K ketepatan kesimpulan maks. 8; B penggunaan bukti maks. 7; R kualitas rekomendasi maks. 7; P koherensi penalaran maks. 3. M4_SCORE = K+B+R+P, maks. 25.
+
+Pola (K, B, R, P = total):
+01 (8,7,7,3)=25
+02 (8,6,7,2)=23
+03 (6,0,7,1)=14
+04 (8,7,5,3)=23
+05 (6,0,6,1)=13
+06 (4,2,2,1)=9
+07 (4,0,6,1)=11
+08 (6,6,2,2)=16
+09 (6,6,2,2)=16
+10 (6,0,4,1)=11
+11 (4,3,5,1)=13
+12 (5,6,3,1)=15
+13 (4,0,2,1)=7
+14 (3,0,6,1)=10
+15 (3,0,3,1)=7
+16 (3,3,1,0)=7
+17 (6,0,0,0)=6
+18 (6,6,0,2)=14
+19 (4,0,6,1)=11
+20 (0,6,7,1)=14
+21 (0,0,6,0)=6
+22 (3,0,2,0)=5
+23 (4,3,3,1)=11
+24 (5,4,3,1)=13
+25 (0,6,0,0)=6
+26 (6,0,1,0)=7
+27 (3,2,2,1)=8
+28 (4,3,2,1)=10
+29 (8,6,7,2)=23
+30 (1,4,0,0)=5
+31 (4,0,5,2)=11
+32 (0,0,0,0)=0
+
+Pedoman K: 8 akurat/spesifik/integratif; 7 benar hampir lengkap; 6 masalah utama dikenali belum lengkap; 5 sebagian benar; 4 hanya satu gejala/aspek; 3 hanya menyebut komposter bermasalah; 2 sangat umum tetapi relevan; 1 petunjuk kecil; 0 tidak relevan/bertentangan.
+Pedoman B: 7 bukti spesifik dan dijelaskan; 6 bukti spesifik tetapi hubungan belum lengkap; 5 bukti relevan terbatas; 4 bukti parsial; 3 sebagian relevan/akurat; 2 rujukan samar; 1 petunjuk umum; 0 tanpa bukti relevan.
+Pedoman R: 7 spesifik, layak, relevan, memadai; 6 layak tetapi satu aspek kurang jelas; 5 konkret menangani sebagian masalah; 4 arah benar tetapi umum; 3 sebagian tepat/kurang jelas; 2 niat memperbaiki tanpa langkah operasional; 1 sebagian besar tidak relevan/tidak layak tetapi ada niat membantu; 0 tidak ada rekomendasi/tidak relevan.
+Pedoman P: 3 logis dan konsisten; 2 sebagian besar masuk akal tetapi satu hubungan belum dijelaskan; 1 hubungan lemah/lompatan logika/klaim tanpa dukungan; 0 penalaran tidak dapat dinilai atau bertentangan dengan bukti.
+Kategori total M4: 22–25 sangat kuat; 18–21 kuat; 13–17 berkembang; 7–12 terbatas; 1–6 minimal; 0 tidak relevan.
+Nilai komponen secara terpisah lalu jumlahkan. Jawaban alternatif yang layak dapat memperoleh skor tinggi. Jangan menyimpulkan maksud yang tidak ditulis atau menghukum kesalahan yang sama berulang kali. Jangan mengurangi skor karena jawaban pendek atau frasa “menurut saya”. Simpan Skor_M4.
+
+==================================================
+ATURAN PENUTUP
+==================================================
+Setiap mesin memilih satu skor sah per misi. Jangan menjumlahkan pola. Jawaban kosong diproses sesuai rubrik. Jawaban parsial tetap dinilai. Skor tidak boleh kurang dari 0 atau lebih dari 25. Skor akhir = Skor_M1 + Skor_M2 + Skor_M3 + Skor_M4, maksimum 100. Jangan menampilkan skor sampai CASE CLOSED. Jangan membuat data praktikum. Jangan mengklaim penilaian semantik sempurna jika sistem hanya memakai heuristik.
